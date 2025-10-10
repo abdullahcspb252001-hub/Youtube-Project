@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaCore - AI Automation Project Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500&family=Courier+New&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #0a0a1a;
+        }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-courier { font-family: 'Courier New', Courier, monospace; }
+
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 2rem 4rem;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .slide-content {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .nav-button:hover {
+            background-color: rgba(177, 0, 255, 0.5);
+            border-color: #B100FF;
+        }
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(177, 0, 255, 0.4), 0 0 5px rgba(0, 89, 255, 0.4);
+        }
+        .icon-glow {
+            filter: drop-shadow(0 0 8px #0059FF);
+            transition: all 0.3s ease;
+        }
+        .icon-glow-purple {
+             filter: drop-shadow(0 0 8px #B100FF);
+        }
+        .tool-card:hover .icon-glow {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px #0059FF);
+        }
+        .circuit-bg {
+            background-image:
+                linear-gradient(rgba(177, 0, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 89, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .thumbnail-img {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .thumbnail-img:hover {
+            border-color: #B100FF;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(177, 0, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="text-[#E6E6E6] flex flex-col items-center justify-center h-screen w-screen relative">
+
+    <!-- Slide Container -->
+    <div id="presentation-container" class="w-full h-full relative">
+
+        <!-- Slide 1: Title Page -->
+        <div class="slide active items-center justify-center text-center bg-gradient-to-br from-[#0a0a1a] via-[#1a0c2e] to-[#2c0a2e] circuit-bg">
+            <div class="slide-content border border-violet-700/50 glow-border rounded-2xl p-8 max-w-4xl w-full">
+                <h1 class="font-poppins text-5xl font-extrabold text-white uppercase tracking-wider mb-4">Spanish Health & Science YouTube Channel</h1>
+                <p class="font-poppins text-2xl text-[#C4C4C4] italic mb-10">AI Automation Project</p>
+                <div class="font-inter text-lg text-gray-300 grid grid-cols-2 gap-x-8 gap-y-4 text-left mx-auto max-w-lg">
+                    <p><strong class="text-white">Name:</strong> Abdullah Bhatti</p>
+                    <p><strong class="text-white">Team:</strong> VitaCore</p>
+                    <p><strong class="text-white">Supervisor:</strong> Sir Rizwan-ul-Haq</p>
+                    <p><strong class="text-white">Organization:</strong> Forte College, Sargodha</p>
+                </div>
+                <p class="mt-8 font-inter text-base text-violet-400">October 2025</p>
+            </div>
+            <div class="absolute top-8 right-8 flex space-x-4">
+                 <svg class="w-10 h-10 icon-glow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#E6E6E6"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z" fill="#0059FF"/></svg>
+                <svg class="w-10 h-10 icon-glow-purple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.267,4,12,4,12,4S5.733,4,4.186,4.418 C3.326,4.648,2.648,5.326,2.418,6.186C2,7.733,2,12,2,12s0,4.267,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.733,20,12,20,12,20s6.267,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.267,22,12,22,12S22,7.733,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" fill="#E6E6E6"/></svg>
+            </div>
+        </div>
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide flex-col justify-center bg-gradient-to-b from-[#1a0c2e] to-[#0a0a1a]">
+            <div class="slide-content w-full max-w-4xl mx-auto text-center">
+                <h2 class="font-poppins text-4xl font-semibold text-white mb-8">Executive Summary</h2>
+                <div class="space-y-4 text-lg font-inter text-[#E6E6E6]">
+                    <p>This project demonstrates how AI automation can create complete YouTube videos without manual work.</p>
+                    <p>Using tools like ChatGPT, Gemini, ElevenLabs, and Runway ML, we developed a Spanish Health & Science channel that automatically generates scripts, voiceovers, videos, and thumbnails.</p>
+                    <p>The goal was to explore how AI simplifies content creation, reduces production time, and breaks language barriers, showcasing AI’s potential in education and media.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Introduction & Project Overview -->
+        <div class="slide items-center justify-center bg-gradient-to-r from-[#0a0a1a] to-[#1a0c2e]">
+            <div class="slide-content w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="p-6 rounded-lg bg-white/5">
+                    <h3 class="font-poppins text-3xl font-bold text-white mb-4">Background & Problem</h3>
+                    <p class="font-inter mb-4">The rise of AI has transformed media creation. Creators can now use automation for research, scripting, and editing—minimizing effort while maintaining creativity.</p>
+                    <p class="font-inter font-semibold text-violet-300">Problem: Many students and creators lack the time or technical skill to produce multilingual, high-quality educational content.</p>
+                </div>
+                <div class="p-6 rounded-lg bg-white/5">
+                    <h3 class="font-poppins text-3xl font-bold text-white mb-4">Objectives & Scope</h3>
+                    <ul class="font-inter list-disc list-inside space-y-2">
+                        <li>Automate video creation using AI tools.</li>
+                        <li>Generate high-quality Spanish content.</li>
+                        <li>Improve productivity and creativity.</li>
+                        <li>Demonstrate AI for global content reach.</li>
+                    </ul>
+                     <p class="font-inter text-sm text-gray-500 mt-4">*Scope: Focused on short-form Spanish Health & Science videos. No live recording.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Tools & Technologies Used -->
+        <div class="slide flex-col items-center justify-center bg-[#0a0a1a]">
+            <div class="slide-content w-full max-w-5xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-10 text-center">Tools & Technologies</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                        <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">ChatGPT & Gemini</h3><p class="font-inter text-sm text-[#C4C4C4]">Script Writing</p></div>
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                        <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.636 5.636a9 9 0 0112.728 0M8.464 15.536a5 5 0 010-7.072"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">ElevenLabs</h3><p class="font-inter text-sm text-[#C4C4C4]">Spanish Voice Generation</p></div>
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                        <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">Ideogram & Leonardo AI</h3><p class="font-inter text-sm text-[#C4C4C4]">Image Generation</p></div>
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                        <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">Hailuo AI & Runway ML</h3><p class="font-inter text-sm text-[#C4C4C4]">Video Generation</p></div>
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                         <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">Capcut</h3><p class="font-inter text-sm text-[#C4C4C4]">Video Editing</p></div>
+                    <div class="tool-card bg-gray-800/50 p-6 rounded-lg border border-violet-700/30">
+                        <svg class="w-12 h-12 mx-auto mb-3 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <h3 class="font-poppins font-bold text-white">WhiskLab</h3><p class="font-inter text-sm text-[#C4C4C4]">Thumbnail Generation</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: System Design & Methodology -->
+        <div class="slide flex-col justify-center items-center bg-gradient-to-br from-[#001024] to-[#190024]">
+            <div class="slide-content w-full max-w-4xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-10 text-center">System Design & Methodology</h2>
+                <div class="flex flex-col items-center space-y-2 font-courier text-lg text-center">
+                    <div class="bg-blue-500/20 border border-blue-400 rounded-lg py-2 px-6">Topic Research (ChatGPT)</div>
+                    <div class="text-blue-400">↓</div>
+                    <div class="bg-blue-500/20 border border-blue-400 rounded-lg py-2 px-6">Script Generation (Gemini)</div>
+                    <div class="text-blue-400">↓</div>
+                    <div class="bg-purple-500/20 border border-purple-400 rounded-lg py-2 px-6">Voiceover (ElevenLabs)</div>
+                    <div class="text-purple-400">↓</div>
+                    <div class="bg-purple-500/20 border border-purple-400 rounded-lg py-2 px-6">Video Editing (CapCut / Runway)</div>
+                    <div class="text-purple-400">↓</div>
+                    <div class="bg-pink-500/20 border border-pink-400 rounded-lg py-2 px-6">Thumbnail Design (Ideogram)</div>
+                    <div class="text-pink-400">↓</div>
+                    <div class="bg-pink-500/20 border border-pink-400 rounded-lg py-2 px-6">Upload & Publish (YouTube)</div>
+                </div>
+                <p class="font-inter text-center mt-8 text-gray-300">The system functions as a linear automated pipeline, where each AI tool handles a specific phase from idea to final upload.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Implementation & Development -->
+        <div class="slide flex-col justify-center bg-[#0a0a1a]">
+            <div class="slide-content w-full max-w-6xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-8 text-center">Implementation & Challenges</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white/5 p-6 rounded-lg">
+                        <h3 class="font-poppins text-2xl font-semibold text-white mb-4">Development Process</h3>
+                        <p class="font-inter text-base">
+                            The implementation began by defining the workflow. Scripts were generated using Gemini, processed into Spanish voiceovers via ElevenLabs, and synchronized with AI-generated visuals from CapCut and Runway ML. Thumbnails were created using Ideogram to match the video's theme.
+                        </p>
+                    </div>
+                    <div class="bg-gray-800/50 border border-violet-700/30 p-6 rounded-lg">
+                        <h3 class="font-poppins text-2xl font-semibold text-white mb-4">Challenges Faced</h3>
+                        <ul class="font-inter list-disc list-inside space-y-3">
+                            <li><strong class="text-violet-300">Voice Sync Mismatches:</strong> Solved via manual timing adjustments in post-processing.</li>
+                            <li><strong class="text-violet-300">Thumbnail Variation:</strong> Managed by refining and standardizing generation prompts.</li>
+                            <li><strong class="text-violet-300">Tool Integration Limits:</strong> Overcome by creating a structured, sequential workflow.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Results & Output -->
+        <div class="slide flex-col justify-center bg-[#0a0a1a]">
+            <div class="slide-content w-full max-w-6xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-8 text-center">Results & Output</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800/50 p-6 rounded-lg text-center border border-blue-500/30">
+                        <h3 class="font-poppins text-xl font-semibold text-blue-300 mb-3">High-Quality Videos</h3>
+                        <p class="font-inter">Produced multiple Spanish Health & Science videos with realistic AI narration and engaging visuals.</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg text-center border border-purple-500/30">
+                        <h3 class="font-poppins text-xl font-semibold text-purple-300 mb-3">Attractive Thumbnails</h3>
+                        <p class="font-inter">Generated consistent, AI-designed thumbnails with high Click-Through-Rate (CTR) potential.</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-lg text-center border border-pink-500/30">
+                        <h3 class="font-poppins text-xl font-semibold text-pink-300 mb-3">80% Effort Reduction</h3>
+                        <p class="font-inter">The fully automated workflow reduced manual content creation effort by an estimated 80%.</p>
+                    </div>
+                </div>
+                 <p class="text-center font-inter text-gray-400 mt-8 italic">(Visuals to be shown: screenshots of videos, thumbnails, and AI tool interfaces)</p>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Generated Thumbnails Showcase -->
+        <div class="slide flex-col justify-center bg-[#0a0a1a]">
+            <div class="slide-content w-full max-w-7xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-6 text-center">Generated Thumbnails Showcase</h2>
+                <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
+                    <img src="1.jpg" alt="Thumbnail 1" class="thumbnail-img">
+                    <img src="2.jpg" alt="Thumbnail 2" class="thumbnail-img">
+                    <img src="3.jpg" alt="Thumbnail 3" class="thumbnail-img">
+                    <img src="4.jpg" alt="Thumbnail 4" class="thumbnail-img">
+                    <img src="5.jpg" alt="Thumbnail 5" class="thumbnail-img">
+                    <img src="6.jpg" alt="Thumbnail 6" class="thumbnail-img">
+                    <img src="7.jpg" alt="Thumbnail 7" class="thumbnail-img">
+                    <img src="8.jpg" alt="Thumbnail 8" class="thumbnail-img">
+                    <img src="9.jpg" alt="Thumbnail 9" class="thumbnail-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Conclusion -->
+        <div class="slide items-center justify-center text-center bg-gradient-to-b from-[#1a0c2e] to-[#2c0a2e]">
+            <div class="slide-content w-full max-w-4xl mx-auto">
+                 <h2 class="font-poppins text-4xl font-bold text-white mb-6">Conclusion</h2>
+                 <p class="font-inter text-xl text-[#E6E6E6] leading-relaxed mb-8">
+                     This project successfully proved that a fully automated pipeline can replace traditional content creation workflows. Using tools like Gemini and ElevenLabs, we built a robust, multilingual content pipeline that empowers creators to reach a global audience with minimal resources, highlighting the real-world impact of AI in media and education.
+                 </p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Future Work & Recommendations -->
+        <div class="slide flex-col justify-center bg-[#0a0a1a]">
+             <div class="slide-content w-full max-w-5xl mx-auto">
+                <h2 class="font-poppins text-4xl font-bold text-white mb-8 text-center">Future Work & Recommendations</h2>
+                 <div class="space-y-4 font-inter">
+                    <div class="flex items-start p-4 bg-white/5 rounded-lg"><span class="text-blue-400 mr-4 text-2xl">🔹</span> <div><strong class="font-poppins text-white">Analytics Dashboard:</strong> Add a dashboard for tracking content performance and viewer engagement.</div></div>
+                    <div class="flex items-start p-4 bg-white/5 rounded-lg"><span class="text-blue-400 mr-4 text-2xl">🔹</span> <div><strong class="font-poppins text-white">Language Expansion:</strong> Experiment with other languages like French, Arabic, and German.</div></div>
+                    <div class="flex items-start p-4 bg-white/5 rounded-lg"><span class="text-blue-400 mr-4 text-2xl">🔹</span> <div><strong class="font-poppins text-white">AI Avatars:</strong> Use AI-generated avatars for a more personal visual presentation in videos.</div></div>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-black/30 backdrop-blur-sm flex items-center justify-center z-10">
+        <button id="prev-btn" class="nav-button rounded-full p-3 mr-4 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <span id="slide-counter" class="text-lg font-medium mx-4 font-inter"></span>
+        <button id="next-btn" class="nav-button rounded-full p-3 ml-4 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                }
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+            }
+
+            function nextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                else if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
+
